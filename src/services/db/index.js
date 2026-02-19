@@ -3,6 +3,10 @@ import pool from "../../../config/db.js";
 class Database {
 
     async query(sql, values = []) {
+        if (!values || values.length < 1) {
+            sql = pool.format(sql);
+        }
+        sql = pool.format(sql, values)
         const [rows] = await pool.execute(sql, values);
         return rows;
     }

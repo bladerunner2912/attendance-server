@@ -1,12 +1,22 @@
-import mysql from "mysql2/promise";
 import config from "./config.js";
 
-const pool = mysql.createPool({
+const dbConfig = {
     host: config.DB_HOST,
-    user: config.DB_USER,
-    password: config.DB_PASSWORD,
+    port: config.DB_PORT,
     database: config.DB_NAME,
-    connectionLimit: 10
-});
+    connectionLimit: config.DB_CONNECTION_LIMIT
+};
 
-export default pool;
+if (config.DB_USER) {
+    dbConfig.user = config.DB_USER;
+}
+
+if (config.DB_PASSWORD) {
+    dbConfig.password = config.DB_PASSWORD;
+}
+
+if (config.DB_SOCKET_PATH) {
+    dbConfig.socketPath = config.DB_SOCKET_PATH;
+}
+
+export default dbConfig;
