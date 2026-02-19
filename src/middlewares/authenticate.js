@@ -1,4 +1,6 @@
-import { verify } from 'jsonwebtoken';
+import pkg from 'jsonwebtoken';
+const { verify } = pkg;
+
 import config from "../../config/config.js";
 
 const ACCESS_SECRET = config.SECRET_KEY;
