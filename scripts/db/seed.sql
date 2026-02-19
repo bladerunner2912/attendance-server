@@ -10,8 +10,8 @@ INSERT INTO users (email, password, role) VALUES
 INSERT INTO instructors (user_id, fullname, phone_no)
 SELECT id,
        CASE email
-           WHEN 'instructor1@example.com' THEN 'Ada Lovelace'
-           WHEN 'instructor2@example.com' THEN 'Alan Turing'
+           WHEN 'instructor1@example.com' THEN 'Arjun'
+           WHEN 'instructor2@example.com' THEN 'Meera'
        END,
        CASE email
            WHEN 'instructor1@example.com' THEN '9000000001'
@@ -45,26 +45,26 @@ INSERT INTO users (email, password, role) VALUES
 INSERT INTO students (user_id, fullname, phone_no)
 SELECT id,
        CASE email
-           WHEN 'student1@example.com' THEN 'Student 01'
-           WHEN 'student2@example.com' THEN 'Student 02'
-           WHEN 'student3@example.com' THEN 'Student 03'
-           WHEN 'student4@example.com' THEN 'Student 04'
-           WHEN 'student5@example.com' THEN 'Student 05'
-           WHEN 'student6@example.com' THEN 'Student 06'
-           WHEN 'student7@example.com' THEN 'Student 07'
-           WHEN 'student8@example.com' THEN 'Student 08'
-           WHEN 'student9@example.com' THEN 'Student 09'
-           WHEN 'student10@example.com' THEN 'Student 10'
-           WHEN 'student11@example.com' THEN 'Student 11'
-           WHEN 'student12@example.com' THEN 'Student 12'
-           WHEN 'student13@example.com' THEN 'Student 13'
-           WHEN 'student14@example.com' THEN 'Student 14'
-           WHEN 'student15@example.com' THEN 'Student 15'
-           WHEN 'student16@example.com' THEN 'Student 16'
-           WHEN 'student17@example.com' THEN 'Student 17'
-           WHEN 'student18@example.com' THEN 'Student 18'
-           WHEN 'student19@example.com' THEN 'Student 19'
-           WHEN 'student20@example.com' THEN 'Student 20'
+           WHEN 'student1@example.com' THEN 'Aarav'
+           WHEN 'student2@example.com' THEN 'Vihaan'
+           WHEN 'student3@example.com' THEN 'Aditya'
+           WHEN 'student4@example.com' THEN 'Krishna'
+           WHEN 'student5@example.com' THEN 'Ishaan'
+           WHEN 'student6@example.com' THEN 'Rohan'
+           WHEN 'student7@example.com' THEN 'Karan'
+           WHEN 'student8@example.com' THEN 'Kabir'
+           WHEN 'student9@example.com' THEN 'Reyansh'
+           WHEN 'student10@example.com' THEN 'Arnav'
+           WHEN 'student11@example.com' THEN 'Anaya'
+           WHEN 'student12@example.com' THEN 'Aditi'
+           WHEN 'student13@example.com' THEN 'Diya'
+           WHEN 'student14@example.com' THEN 'Ira'
+           WHEN 'student15@example.com' THEN 'Myra'
+           WHEN 'student16@example.com' THEN 'Saanvi'
+           WHEN 'student17@example.com' THEN 'Riya'
+           WHEN 'student18@example.com' THEN 'Kavya'
+           WHEN 'student19@example.com' THEN 'Nisha'
+           WHEN 'student20@example.com' THEN 'Pooja'
        END,
        CONCAT('8000000', LPAD(id, 3, '0'))
 FROM users

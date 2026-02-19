@@ -10,7 +10,7 @@
     "db:seed": "node scripts/db/run-sql.js scripts/db/seed.sql",
     "db:setup": "npm run db:init && npm run db:seed",
     "hash:password": "node scripts/hashPassword.js",
-    "deploy": "npm ci && npm run db:setup && npm run start",
+    "deploy": "./scripts/deploy.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

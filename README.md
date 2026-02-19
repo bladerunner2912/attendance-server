@@ -49,6 +49,14 @@ Seed guarantees:
 
 Default seeded password (plain): `daisy123`
 
+Seeded login credentials:
+- Instructors:
+  - `instructor1@example.com` / `daisy123` (profile name: `Arjun`)
+  - `instructor2@example.com` / `daisy123` (profile name: `Meera`)
+- Students:
+  - `student1@example.com` to `student20@example.com` / `daisy123`
+  - Example: `student1@example.com` / `daisy123` (profile name: `Aarav`)
+
 To generate new hash for any plain password:
 
 ```bash
@@ -78,6 +86,11 @@ Equivalent shell script:
 ```bash
 ./scripts/deploy.sh
 ```
+
+`deploy` currently runs:
+- `npm ci`
+- `npm run db:setup`
+- `npm run start`
 
 ## 6. No DB Username/Password Case
 
