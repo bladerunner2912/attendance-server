@@ -49,14 +49,6 @@ Seed guarantees:
 
 Default seeded password (plain): `daisy123`
 
-Seeded login credentials:
-- Instructors:
-  - `instructor1@example.com` / `daisy123` (profile name: `Arjun`)
-  - `instructor2@example.com` / `daisy123` (profile name: `Meera`)
-- Students:
-  - `student1@example.com` to `student20@example.com` / `daisy123`
-  - Example: `student1@example.com` / `daisy123` (profile name: `Aarav`)
-
 To generate new hash for any plain password:
 
 ```bash
@@ -92,7 +84,34 @@ Equivalent shell script:
 - `npm run db:setup`
 - `npm run start`
 
-## 6. No DB Username/Password Case
+## 6. Marked Section
+
+### Credentials To Use
+
+- Instructors:
+  - `instructor1@example.com` / `daisy123` (profile name: `Arjun`)
+  - `instructor2@example.com` / `daisy123` (profile name: `Meera`)
+- Students:
+  - `student1@example.com` to `student20@example.com` / `daisy123`
+  - Example: `student1@example.com` / `daisy123` (profile name: `Aarav`)
+
+### Assumptions Made
+
+- All seeded users (students and instructors) share the same default password for easier testing: `daisy123`.
+- Student and instructor profile names are single-word first names.
+- Seed quantity remains fixed:
+  - 20 students
+  - 2 instructors
+  - 5 classes
+  - 10 sessions per class
+
+### Design Decisions
+
+- `npm run deploy` delegates to `./scripts/deploy.sh` as the single source of deploy behavior.
+- Deploy flow is deterministic: install dependencies, reset/setup DB data, then start server.
+- Single-word names in seed data were chosen to simplify UI rendering and API response readability.
+
+## 7. No DB Username/Password Case
 
 If your MySQL setup allows login without explicit username/password (for example local socket/auth plugin), keep:
 
@@ -111,7 +130,7 @@ DB_SOCKET_PATH=/var/run/mysqld/mysqld.sock
 
 The DB runner and app only send `user`/`password` when provided.
 
-## 7. Helper Scripts
+## 8. Helper Scripts
 
 - `./scripts/setup-db.sh` -> init + seed
 - `./scripts/start-server.sh` -> start API
